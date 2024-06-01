@@ -1,7 +1,10 @@
 package com.example.bookmyshow.model;
 
 import com.example.bookmyshow.entity.UserEntity;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import lombok.Data;
+
+import java.util.Arrays;
 
 @Data
 public class User {
@@ -11,7 +14,21 @@ public class User {
     private String firstName;
     private String lastName;
     private UserRole role;
+    public String getPassword() {
+        if(this.password == null){
+            this.password = Arrays.toString(new char[]{});
+        }
+        return new String(password);
+    }
 
+    @JsonSetter
+    public void setPassword(String password) {
+        if(password == null){
+            password = "";
+        }
+        this.password = Arrays.toString(password.toCharArray());
+        password = null;
+    }
     public UserEntity toEntity() {
         UserEntity entity = new UserEntity();
         entity.setId(this.getId());
