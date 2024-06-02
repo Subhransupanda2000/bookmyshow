@@ -4,31 +4,31 @@ import com.example.bookmyshow.entity.UserEntity;
 import com.fasterxml.jackson.annotation.JsonSetter;
 import lombok.Data;
 
-import java.util.Arrays;
-
 @Data
 public class User {
     private Long id;
     private String email;
-    private String password;
+    private char[] password;
     private String firstName;
     private String lastName;
     private UserRole role;
+
     public String getPassword() {
-        if(this.password == null){
-            this.password = Arrays.toString(new char[]{});
+        if (this.password == null) {
+            this.password = new char[]{};
         }
         return new String(password);
     }
 
     @JsonSetter
     public void setPassword(String password) {
-        if(password == null){
+        if (password == null) {
             password = "";
         }
-        this.password = Arrays.toString(password.toCharArray());
+        this.password = password.toCharArray();
         password = null;
     }
+
     public UserEntity toEntity() {
         UserEntity entity = new UserEntity();
         entity.setId(this.getId());
