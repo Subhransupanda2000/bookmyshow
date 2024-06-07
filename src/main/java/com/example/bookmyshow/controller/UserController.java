@@ -4,11 +4,12 @@ import com.example.bookmyshow.auth.Token;
 import com.example.bookmyshow.model.User;
 import com.example.bookmyshow.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestBody;
 @RestController
 @RequestMapping("/users")
-@CrossOrigin(origins = "http://localhost:5173")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -26,7 +27,4 @@ public class UserController {
         token.setEncodedTokenValue(tokenValue);
         return token;
     }
-
-
-
 }
