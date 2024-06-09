@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class MovieController {
     @Autowired
     private MovieService movieService;
-    @PostMapping("/movie")
-    public Movie createMovie(@Validated @RequestBody Movie movie)
+    @PostMapping
+    public Movie createMovie(@RequestBody Movie movie)
     {
         return movieService.createMovie(movie);
     }
