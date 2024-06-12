@@ -10,7 +10,7 @@ public class Hall {
     private String hallType;
     private int screenNumber;
     private int seatNumber;
-    private Address address;
+    private Long addressId;
 
     public HallEntity toEntity() {
         HallEntity entity = new HallEntity();
@@ -18,7 +18,7 @@ public class Hall {
         entity.setHallType(this.getHallType());
         entity.setScreenNumber(this.getScreenNumber());
         entity.setSeatNumber(this.getSeatNumber());
-        entity.setAddress(this.getAddress());
+        entity.setAddressId(this.getAddressId());
         return entity;
     }
 
@@ -27,7 +27,7 @@ public class Hall {
         this.setScreenNumber(entity.getScreenNumber());
         this.setHallType(entity.getHallType());
         this.setSeatNumber(entity.getSeatNumber());
-        this.setAddress(entity.getAddress());
+        this.setAddressId(entity.getAddressId());
         return this;
     }
 }

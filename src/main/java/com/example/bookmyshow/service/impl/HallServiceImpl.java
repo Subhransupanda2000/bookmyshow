@@ -4,6 +4,7 @@ import com.example.bookmyshow.Repository.HallEntityRepository;
 import com.example.bookmyshow.entity.HallEntity;
 import com.example.bookmyshow.model.Hall;
 import com.example.bookmyshow.service.HallService;
+import com.example.bookmyshow.utills.IdGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,9 @@ public class HallServiceImpl implements HallService {
 
     @Override
     public Hall createHall(Hall hall) {
-        HallEntity entity = hallEntityRepository.save(hall.toEntity());
-        return new Hall().fromEntity(entity);
+        hall.setId(IdGenerator.getLongId());
+        HallEntity entity = hall.toEntity();
+        entity = hallEntityRepository.save(entity);
+        return hall.fromEntity(entity);
     }
 }

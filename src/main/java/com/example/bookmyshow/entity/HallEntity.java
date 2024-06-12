@@ -1,6 +1,5 @@
 package com.example.bookmyshow.entity;
 
-import com.example.bookmyshow.model.Address;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -15,5 +14,5 @@ public class HallEntity {
     private String hallType;
     private int screenNumber;
     private int seatNumber;
-    private Address address;
+    private Long addressId;
 }
