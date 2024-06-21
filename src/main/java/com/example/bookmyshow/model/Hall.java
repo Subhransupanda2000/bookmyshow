@@ -8,26 +8,20 @@ import lombok.Data;
 public class Hall {
     private Long id;
     private String hallType;
-    private int screenNumber;
-    private int seatNumber;
-    private Long addressId;
+    private String name;
 
     public HallEntity toEntity() {
         HallEntity entity = new HallEntity();
         entity.setId(this.getId());
         entity.setHallType(this.getHallType());
-        entity.setScreenNumber(this.getScreenNumber());
-        entity.setSeatNumber(this.getSeatNumber());
-        entity.setAddressId(this.getAddressId());
+        entity.setName(this.getName());
         return entity;
     }
 
     public Hall fromEntity(HallEntity entity) {
         this.setId(entity.getId());
-        this.setScreenNumber(entity.getScreenNumber());
         this.setHallType(entity.getHallType());
-        this.setSeatNumber(entity.getSeatNumber());
-        this.setAddressId(entity.getAddressId());
+        this.setName(entity.getName());
         return this;
     }
 }

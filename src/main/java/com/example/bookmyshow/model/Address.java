@@ -13,6 +13,7 @@ public class Address {
     private String state;
     private String country;
     private String postalCode;
+    private Long hallId;
 
 
     public AddressEntity toEntity(){
@@ -25,6 +26,7 @@ public class Address {
         addressEntity.setState(this.getState());
         addressEntity.setCountry(this.getCountry());
         addressEntity.setPostalCode(this.getPostalCode());
+        addressEntity.setHallId(this.getHallId());
         return addressEntity;
     }
 
@@ -37,6 +39,7 @@ public class Address {
         this.setState(entity.getState());
         this.setCountry(entity.getCountry());
         this.setPostalCode(entity.getPostalCode());
+        this.setHallId(entity.getHallId());
         return this;
     }
 

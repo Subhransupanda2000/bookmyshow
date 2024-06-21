@@ -19,5 +19,5 @@ public class AddressEntity {
     private String state;
     private String country;
     private String postalCode;
-
+    private Long hallId;
 }

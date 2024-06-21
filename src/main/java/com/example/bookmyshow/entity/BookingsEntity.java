@@ -5,12 +5,15 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 
+import java.util.Date;
+
 @Entity
 @Data
-@Table(name = "hall")
-public class HallEntity {
+@Table(name = "bookings")
+public class BookingsEntity {
     @Id
     private Long id;
-    private String hallType;
-    private String name;
+    private Long userId;
+    private Long showId;
+    private Date bookingsDate;
 }

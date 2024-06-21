@@ -6,11 +6,12 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
+@Table(name = "seat")
 @Data
-@Table(name = "hall")
-public class HallEntity {
+public class SeatEntity {
     @Id
     private Long id;
-    private String hallType;
-    private String name;
+    private Long screenId;
+    private Long seatNumber;
 }
+
